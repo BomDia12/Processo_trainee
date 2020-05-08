@@ -11,7 +11,7 @@ def dnaaleatorio (tamanho)
       lista.push('T')
     when 2
       lista.push('C')
-    when 3
+    else
       lista.push('G')
     end
   end
@@ -27,7 +27,7 @@ def completadna (letra)
     lista.push('C')
   when 'C'
     lista.push('G')
-  when 'T'
+  else
     lista.push('A')
   end
   lista
@@ -35,6 +35,7 @@ end
 
 def main (tamanho)
   dnasimples = dnaaleatorio(tamanho)
+  print "#{dnasimples}\n"
   dnaduplo = []
   dnasimples.each do |nucleotideo|
     par = completadna(nucleotideo)
@@ -44,4 +45,4 @@ def main (tamanho)
 end
 
 result = main(10)
-print(result)
+print result

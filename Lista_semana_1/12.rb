@@ -1,9 +1,5 @@
 def isBissexto? (ano)
-  if ano % 400 == 0
-    true
-  elsif ano % 100 == 0
-    false
-  elsif ano % 4 == 0
+  if (ano % 400 == 0) or ((ano % 100 != 0) and (ano % 4 == 0))
     true
   else
     false
@@ -22,10 +18,10 @@ def createcentry (seculo)
 end
 
 bissexto = []
-seculo = createcentry (20)
+seculo = createcentry(20)
 seculo.each do |ano|
-  if isBissexto? (ano)
-    bissexto.push (ano)
+  if isBissexto?(ano)
+    bissexto.push(ano)
   end
 end
 puts bissexto
