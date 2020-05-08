@@ -45,4 +45,6 @@ def main (tamanho)
 end
 
 result = main(10)
-print result
+for dupla in result
+  print"#{dupla}\n"
+end
