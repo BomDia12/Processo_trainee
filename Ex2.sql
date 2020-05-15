@@ -69,3 +69,8 @@ ADD birth_date DATE;
 UPDATE Actors 
 SET birth_date='1977/01/13'
 WHERE actor_name='Orlando Bloom';
+
+select *
+from Actors
+left join characters
+on actors.actor_id=characters.actor_id;
