@@ -1,3 +1,10 @@
+require 'digest'
+
+#Duranta a aula de quarta da semana passada, vocês falaram sobre http e https,
+# isso me inspirou e eu apliquei um básico sistema de criptografar as senhas.
+# Por isso, se vocês tentarem a opção de devolver os dados da conta, a senha
+# vai ser um hash.
+
 class Owner
   def initialize (nome, cpf, telefone, idade)
     @nome = nome
@@ -22,7 +29,7 @@ class CreditAccount < Owner
     super(nome, cpf, telefone, idade)
     @saldo = saldo
     @num_conta = num_conta
-    @senha = senha
+    @senha = Digest::MD5.hexdigest(senha)
     @@accounts.push(self)
   end
 
@@ -55,7 +62,7 @@ class SavingsAccount < Owner
     super(nome, cpf, telefone, idade)
     @saldo = saldo
     @num_conta = num_conta
-    @senha = senha
+    @senha = Digest::MD5.hexdigest(senha)
     @@accounts.push(self)
   end
 
@@ -203,7 +210,7 @@ while numero_digitado != 6
         senha_digitada = nil
         while senha_digitada != senha
           puts 'Digite a senha da conta:'
-          senha_digitada = gets.tr("\n", '')
+          senha_digitada = Digest::MD5.hexdigest(gets.tr("\n", ''))
           if senha_digitada != senha
             puts "Senha errada! Tente de novo"
           end
@@ -219,7 +226,7 @@ while numero_digitado != 6
         senha_digitada = nil
         while senha_digitada != senha
           puts 'Digite a senha da conta:'
-          senha_digitada = gets.tr("\n", '')
+          senha_digitada = Digest::MD5.hexdigest(gets.tr("\n", ''))
           if senha_digitada != senha
             puts "Senha errada! Tente de novo"
           end

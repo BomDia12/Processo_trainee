@@ -1,3 +1,10 @@
+require 'digest'
+
+#Duranta a aula de quarta da semana passada, vocês falaram sobre http e https,
+# isso me inspirou e eu apliquei um básico sistema de criptografar as senhas.
+# Por isso, se vocês tentarem a opção de devolver os dados da conta, a senha
+# vai ser um hash.
+
 class ContaBancaria
   def initialize (nome, cpf, telefone, idade, saldo, num_conta, senha)
     @nome = nome
@@ -6,7 +13,7 @@ class ContaBancaria
     @idade = idade
     @saldo = saldo
     @num_conta = num_conta
-    @senha = senha
+    @senha = Digest::MD5.hexdigest(senha)
   end
 
   def depositar (valor)
