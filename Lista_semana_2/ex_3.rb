@@ -43,7 +43,7 @@ class CreditAccount < Owner
     return {novo_saldo: @saldo, valor_retirado: valor}
   end
 
-  attr_reader :saldo, :num_conta, :accounts, :senha
+  attr_reader :saldo, :num_conta, :senha
 
   def dados_conta
     {numero_da_conta: @num_conta, senha:@senha}
@@ -80,7 +80,7 @@ class SavingsAccount < Owner
     end
   end
 
-  attr_reader :saldo, :accounts, :num_conta, :senha
+  attr_reader :saldo, :num_conta, :senha
 
   def dados_conta
     {numero_da_conta: @num_conta, senha:@senha}
@@ -102,13 +102,13 @@ def segundo_menu (conta)
   numero = 0
   puts "Digite sua opção:"
   while numero != 7
-    print "1. Depositar
-          2. Sacar
-          3. Exibir saldo
-          4. Modificar telefone
-          5. Exibir dados pessoais
-          6. Exibir dados da conta
-          7. Sair\n"
+    print "1. Depositar\n" +
+              "2. Sacar\n" +
+              "3. Exibir saldo\n" +
+              "4. Modificar telefone\n" +
+              "5. Exibir dados pessoais\n" +
+              "6. Exibir dados da conta\n" +
+              "7. Sair\n"
     numero = gets.to_i
     case numero
     when 1
@@ -162,12 +162,12 @@ numero_digitado = 0
 puts 'Digite um número:'
 
 while numero_digitado != 6
-  print "1. Listar contas corrente
-  2. Listar contas popança
-  3. Criar conta corrente
-  4. Criar conta poupança
-  5. Acessar conta
-  6. Sair\n"
+  print "1. Listar contas corrente\n" +
+  "2. Listar contas popança\n" +
+  "3. Criar conta corrente\n" +
+  "4. Criar conta poupança\n" +
+  "5. Acessar conta\n" +
+  "6. Sair\n"
   numero_digitado = gets.to_i
   case numero_digitado
   when 1

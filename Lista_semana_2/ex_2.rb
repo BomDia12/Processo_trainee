@@ -45,20 +45,20 @@ conta = ContaBancaria.new(
     23,
     467,
     1024633,
-    123456
+    '123456'
 )
 
 numero = 0
 puts "Digite sua opção:"
 
 while numero != 7
-  print "1. Depositar
-  2. Sacar
-  3. Exibir saldo
-  4. Modificar telefone
-  5. Exibir dados pessoais
-  6. Exibir dados da conta
-  7. Sair\n"
+  print "1. Depositar\n" +
+  "2. Sacar\n" +
+  "3. Exibir saldo\n" +
+  "4. Modificar telefone\n" +
+  "5. Exibir dados pessoais\n" +
+  "6. Exibir dados da conta\n" +
+  "7. Sair\n"
   numero = gets.to_i
   case numero
   when 1

@@ -13,7 +13,7 @@ end
 
 print 'Escreva um número inteiro positivo:'
 numero = gets.to_i
-if numero < 0
+if numero > 0
   valor = fibonacii(numero)
   puts valor
 else
